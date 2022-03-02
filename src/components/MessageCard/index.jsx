@@ -19,9 +19,10 @@ export default function MessageCard({ name, date, content, replys = [] }) {
       <div className="card-body">
         <p className="content">{content}</p>
       </div>
-      <hr />
       <div className="card-reply-section">
-        <input type="text" name="reply" id="reply" placeholder="reply" />
+        <div className="controls">
+          <input type="text" name="reply" id="reply" placeholder="reply" />
+        </div>
         <div className="replays">
           {replys.map(({ name, date, content }) => {
             return <ReplySection name={name} date={date} content={content} />;
