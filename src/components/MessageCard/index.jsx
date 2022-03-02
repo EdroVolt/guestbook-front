@@ -1,7 +1,8 @@
 import React from "react";
+import ReplySection from "./ReplySection";
 import "./style.css";
 
-export default function MessageCard({ name, date, content, replys }) {
+export default function MessageCard({ name, date, content, replys = [] }) {
   return (
     <div className="card">
       <div className="card-header">
@@ -21,7 +22,11 @@ export default function MessageCard({ name, date, content, replys }) {
       <hr />
       <div className="card-reply-section">
         <input type="text" name="reply" id="reply" placeholder="reply" />
-        <div className="replays">{/* TODO: */}</div>
+        <div className="replays">
+          {replys.map(({ name, date, content }) => {
+            return <ReplySection name={name} date={date} content={content} />;
+          })}
+        </div>
       </div>
     </div>
   );
