@@ -2,7 +2,7 @@ import React from "react";
 import ReplySection from "./ReplySection";
 import "./style.css";
 
-export default function MessageCard({ name, date, content, replys = [] }) {
+export default function MessageCard({ name, content, replys = [] }) {
   return (
     <div className="card">
       <div className="card-header">
@@ -12,7 +12,6 @@ export default function MessageCard({ name, date, content, replys = [] }) {
         </div>
         <div className="message-info">
           <span className="name">{name}</span>
-          <span className="date">{date}</span>
         </div>
       </div>
       <hr />
@@ -25,7 +24,7 @@ export default function MessageCard({ name, date, content, replys = [] }) {
         </div>
         <div className="replays">
           {replys.map(({ name, date, content }) => {
-            return <ReplySection name={name} date={date} content={content} />;
+            return <ReplySection name={name} content={content} />;
           })}
         </div>
       </div>
