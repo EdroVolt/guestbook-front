@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export default function MessageCard() {
+export default function MessageCard({ name, date, content, replys }) {
   return (
     <div className="card">
       <div className="card-header">
@@ -10,18 +10,13 @@ export default function MessageCard() {
           <span>X</span>
         </div>
         <div className="message-info">
-          <span className="name">Ahmed</span>
-          <span className="date">2/3/2022</span>
+          <span className="name">{name}</span>
+          <span className="date">{date}</span>
         </div>
       </div>
       <hr />
       <div className="card-body">
-        <p className="content">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-          quas aut reprehenderit cumque non. Aperiam aliquam ea explicabo minima
-          quasi voluptatum harum nam sit amet dignissimos, animi debitis quos
-          quod.
-        </p>
+        <p className="content">{content}</p>
       </div>
       <hr />
       <div className="card-reply-section">
